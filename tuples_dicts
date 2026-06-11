@@ -1,0 +1,30 @@
+# 1. Create a tuple with the names of the months
+months = ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+# 2. Print the first and last month
+print(f"First month: {months[0]}, Last month: {months[-1]}")
+# 3. Demonstrate that tuples are immutable using try/except block
+try:
+    months[0] = "New Month"
+except TypeError as e:
+    print(f"Error: {e}")
+    #print((f"Error: {{e}}"))
+    print("Tuples are immutable and cannot be changed after creation.")
+    # 4. Create a dictionary with student names and their grades using name-grade pairs
+    student_grades = {
+        "Aliya": 89,
+        "John": 92,
+        "Charlie": 78,
+        "Dorcas": 96
+    }
+    print(student_grades)
+    # 5. Add a new student and grade to the dictionary, then prints all student names and grades
+    student_grades["Sarah"] = 95
+    print(student_grades)
+    # 6. Updates one of the existing student’s grades, then prints the updated entry:
+    student_grades["Charlie"] = 90
+    print(student_grades)
+    # 7. Use a loop to print out each student’s name and grade in a formatted way:
+    for name, grade in student_grades.items():
+        print(f"Student: {name:10} | Grade: {grade}")
+        
+     

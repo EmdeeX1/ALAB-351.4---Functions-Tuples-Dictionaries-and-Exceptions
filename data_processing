@@ -1,0 +1,42 @@
+# Make a tuple of numeric grades
+numeric_grade = (89, 92, 90, 96, 95)
+# Define a function get_average_grade(grades_tuple) that takes a tuple of numeric grades and returns the average
+def get_average_grade(grades_tuple):
+    # Check if the tuple is empty to avoid division by zero
+    if not grades_tuple:
+      print("Warning: The grade tuple is empty")
+      return None
+    try:
+        # Convert string to integers and sum them
+        # Divide by the number of items
+        total = sum(float(grade) for grade in grades_tuple)
+        average = total / len (grades_tuple)
+        return average
+    except ZeroDivisionError:
+      #print("Warning: Cannot divide by zero.")
+      return None
+    except ValueError:
+      #print("Warning: Tuple contains non-numeric strings.")
+     return None
+print(get_average_grade(numeric_grade))
+print(get_average_grade(()))
+# Define a dictionary course_grades where keys are course names: Math, Science, and History
+def course_grades():
+ grades = {
+   "Math": (90, 40, 50),
+   "Science": (86, 70),
+   # The intentional edge case
+   "History": ()
+ }
+ for course, grades_tuples in grades.items():
+       try:
+         avg = get_average_grade(grades_tuples)
+               # Gracefully handle None return values (for example, from empty tuples) 
+         if avg is None:
+               print(f"Warning: No grade found for {course}.")
+         else:
+                 print(f"The average grade for {course} is {avg:.1f}")
+       except Exception as u:
+         print(f"An error occurred processing {course}: {u}")
+             
+course_grades()

@@ -1,0 +1,34 @@
+# 1. Function to greet a user with a name, or generic greeting if no name is provided
+def greet_user(): 
+ " " "Prints a greeting message using the provided name or a default if no name is provided" " "    
+user_input = input("Enter your name: ")
+name = user_input.strip() if user_input.strip() else "User"
+print(f"Hello, {name}! Welcome!")
+# Demonstrating the greet_user function with or without user name(striking "enter" on the keyboard)
+greet_user()
+# 2. Function to return the sum of two numbers
+def add_two_numbers(a, b):
+    " " "Returns the sum of two numbers" " "
+    return a + b
+#result = add_two_numbers(2, 4)
+# Demonstrating adding two numbers that result in an even number
+result_even = add_two_numbers(2, 4)
+print(f"The sum is: {result_even}")
+# 3. Function to check if a number is even
+def is_even(num):
+    " " "Returns True if the number is even, and False otherwise. " " "
+    return num % 2 == 0
+# Demonstrating adding two numbers and checking if the result is even or odd
+ # Demonstrating storing the retured value in a variable and using it in a conditional statement
+if is_even(result_even):
+#if is_even(result):
+    print(f"Result is True")
+else:
+    print(f"Result is False")
+''' Demonstrating adding two numbers, with one being odd and the other even '''
+result_odd = add_two_numbers(7, 4)
+print(f"The sum is: {result_odd}")
+if is_even(result_odd):
+ print(f"Result is True")
+else:
+ print(f"Result is False")

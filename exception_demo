@@ -1,0 +1,43 @@
+
+def safe_divide(a, b):
+ if b == 0:
+  raise ValueError("Cannot divide by zero")
+ else:
+  return a / b 
+try:
+  # Outer try block
+  result = safe_divide(5, 0)
+  print(result)
+except ValueError as e:
+  print(f"Error: {e}")
+finally:
+  print("Division operation completed, whether or not an error occurred.")
+  try:
+    # Inner try block for the conversion
+  # Attempting an unsafe operation: converting an invalid string to an int
+    user_input = "Hi!"
+    num = int(user_input)
+    print(f"The number is: {num}")
+  except Exception as e: 
+# Catching the generic Exception class
+   print(f"An unexpected error occurred: {e}")
+  finally:
+   #print("Conversion attempt finished.")
+
+   #OR
+   while True:
+    try:
+      user_input = input("Please enter a number: ")
+      num = int(user_input)
+    except ValueError:
+     # This catches cases where the input isn't a valid integer
+     print("That's not a valid number! Try again.")
+    else:
+     # This only runs if the conversion above succeeded
+     print(f"Success! The number is: {num}")
+     break 
+           # Exit the loop
+    finally:
+    # This runs every single time, regardless of success or failure
+     print("Conversion attempt finished.")
+
